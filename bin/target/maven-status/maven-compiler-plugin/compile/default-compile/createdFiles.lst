@@ -1,0 +1,14 @@
+com\mycompany\simple_project\SecondaryController.class
+models\NhanVien.class
+com\mycompany\simple_project\App.class
+models\PhongChieu.class
+models\KhachHang.class
+models\LichChieu.class
+models\Phim.class
+models\VeXemPhim.class
+com\mycompany\simple_project\PrimaryController.class
+module-info.class
+com\mycompany\simple_project\loginFormController.class
+models\HoaDon.class
+models\dbTable.class
+models\TaiKhoan.class

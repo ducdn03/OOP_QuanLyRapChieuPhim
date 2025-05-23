@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1080.0" style="-fx-background-color: #F0F2F5; -fx-border-style: solid; -fx-border-radius: 10px; -fx-border-color: #FFFFFF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.simple_project.adminHomePageController">
+   <children>
+      <AnchorPane layoutX="1.0" layoutY="200.0" prefHeight="200.0" prefWidth="1080.0" style="-fx-border-style: solid; -fx-border-radius: 5px; -fx-background-color: #FFFFFF; -fx-border-color: #FFFFFF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
+         <children>
+            <Label layoutX="40.0" layoutY="25.0" text="Lịch chiếu hôm nay">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <TableView fx:id="scheduleTable" editable="true" layoutX="40.0" layoutY="52.0" prefHeight="150.0" prefWidth="1000.0">
+               <columns>
+                  <TableColumn fx:id="colMovie" prefWidth="278.0" text="Phim" />
+                  <TableColumn fx:id="colRoom" minWidth="0.0" prefWidth="130.0" text="Phòng" />
+                  <TableColumn fx:id="colTime" prefWidth="131.0" text="Thời gian" />
+                  <TableColumn fx:id="colRemainSeat" prefWidth="135.0" text="Ghế trống" />
+                  <TableColumn fx:id="colCondition" prefWidth="151.0" text="Trạng thái" />
+                  <TableColumn fx:id="colAction" prefWidth="174.0" text="Hành động" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <HBox layoutY="7.0" prefHeight="142.0" prefWidth="1080.0" spacing="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="15.0">
+         <children>
+            <AnchorPane prefWidth="300.0" style="-fx-border-style: solid; -fx-border-radius: 10px; -fx-background-color: #FFFFFF; -fx-border-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="42.0" layoutY="27.0" text="Suất chiếu" textFill="#2c3e50">
+                     <font>
+                        <Font name="Tahoma Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="scheduleLabel" layoutX="14.0" layoutY="79.0" text="Label" textFill="#2c3e50">
+                     <font>
+                        <Font name="Tahoma Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </AnchorPane>
+            <AnchorPane prefHeight="120.0" prefWidth="300.0" style="-fx-border-style: solid; -fx-border-radius: 10px; -fx-background-color: #FFFFFF; -fx-border-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="22.0" layoutY="25.0" text="Phim chiếu trong ngày" textFill="#2c3e50">
+                     <font>
+                        <Font name="Tahoma Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="movieLabel" layoutX="14.0" layoutY="79.0" text="Label" textFill="#2c3e50">
+                     <font>
+                        <Font name="Tahoma Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="120.0" prefWidth="300.0" style="-fx-border-style: solid; -fx-border-radius: 10px; -fx-background-color: #FFFFFF; -fx-border-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="42.0" layoutY="27.0" text="Vé đã bán" textFill="#2c3e50">
+                     <font>
+                        <Font name="Tahoma Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ticketLabel" layoutX="14.0" layoutY="79.0" text="Label" textFill="#2c3e50">
+                     <font>
+                        <Font name="Tahoma Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+         <padding>
+            <Insets left="45.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

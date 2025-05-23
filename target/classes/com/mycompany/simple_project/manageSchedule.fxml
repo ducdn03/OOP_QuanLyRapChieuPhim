@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1080.0" style="-fx-background-color: #F0F2F5; -fx-border-style: solid; -fx-border-radius: 10px; -fx-border-color: #FFFFFF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.simple_project.manageScheduleController">
+   <children>
+      <HBox alignment="CENTER_LEFT" layoutX="47.0" layoutY="64.0" maxHeight="100.0" maxWidth="1080.0" prefHeight="100.0" prefWidth="1080.0" spacing="40.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="64.0">
+         <padding>
+            <Insets left="100.0" right="100.0" />
+         </padding>
+      </HBox>
+      <TabPane fx:id="scheduleTabPane" layoutX="96.0" layoutY="102.0" prefHeight="592.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab id="1" text="Lịch chiếu">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="900.0">
+                     <children>
+                        <AnchorPane prefHeight="571.0" prefWidth="800.0">
+                           <children>
+                              <TableView fx:id="scheduleTable" editable="true" layoutY="99.0" prefHeight="400.0" prefWidth="900.0">
+                                 <columns>
+                                    <TableColumn fx:id="colMovie" prefWidth="350.0" text="Phim" />
+                                    <TableColumn fx:id="colRoom" minWidth="0.0" prefWidth="100.0" text="Phòng" />
+                                    <TableColumn fx:id="colTime" prefWidth="100.0" text="Thời gian" />
+                                    <TableColumn fx:id="colRemainSeat" prefWidth="100.0" text="Ghế trống" />
+                                    <TableColumn fx:id="colCondition" prefWidth="100.0" text="Trạng thái" />
+                                    <TableColumn fx:id="colAction" maxWidth="150.0" prefWidth="150.0" text="Hành động" />
+                                 </columns>
+                              </TableView>
+                              <DatePicker fx:id="dateSearch" layoutX="242.0" layoutY="35.0" prefHeight="25.0" prefWidth="208.0" />
+                              <FontAwesomeIcon fx:id="searchBtn" glyphName="SEARCH" layoutX="485.0" layoutY="58.0" onMousePressed="#handleSearch" size="30" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab id="2" text="Sửa">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="324.0" prefWidth="502.0">
+                     <children>
+                        <GridPane layoutX="250.0" layoutY="84.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label alignment="CENTER" style="-fx-font-family: Tahoma; -fx-font-size: 16; -fx-font-weight: bold;" text="Trạng thái" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" style="-fx-font-family: Tahoma; -fx-font-size: 16; -fx-font-weight: bold;" text="Ngày chiếu" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" style="-fx-font-family: Tahoma; -fx-font-size: 16; -fx-font-weight: bold;" text="Phim">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" style="-fx-font-family: Tahoma; -fx-font-size: 16; -fx-font-weight: bold;" text="Phòng chiếu" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" style="-fx-font-family: Tahoma; -fx-font-size: 16; -fx-font-weight: bold;" text="Thời gian" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" style="-fx-font-family: Tahoma; -fx-font-size: 16; -fx-font-weight: bold;" text="Ghế trống" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <ComboBox fx:id="repairMovie" prefWidth="200.0" GridPane.columnIndex="1" />
+                              <ComboBox fx:id="repairRoom" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <ComboBox fx:id="repairTime" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <ComboBox fx:id="repairState" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextField fx:id="repairRemainSeat" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <DatePicker fx:id="repairDate" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                           </children>
+                        </GridPane>
+                        <HBox alignment="CENTER" layoutX="350.0" layoutY="402.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="deleteBtn" mnemonicParsing="false" onMousePressed="#handleDelete" text="Xóa" />
+                              <Button fx:id="updateBtn" mnemonicParsing="false" onMousePressed="#handleUpdate" text="Lưu" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab id="3" text="Tạo">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="324.0" prefWidth="502.0">
+                     <children>
+                        <GridPane layoutX="250.0" layoutY="81.0">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label alignment="CENTER" style="-fx-font-family: Tahoma; -fx-font-size: 16; -fx-font-weight: bold;" text="Trạng thái" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" style="-fx-font-family: Tahoma; -fx-font-size: 16; -fx-font-weight: bold;" text="Ngày chiếu" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" style="-fx-font-family: Tahoma; -fx-font-size: 16; -fx-font-weight: bold;" text="Phim">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" style="-fx-font-family: Tahoma; -fx-font-size: 16; -fx-font-weight: bold;" text="Phòng chiếu" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" style="-fx-font-family: Tahoma; -fx-font-size: 16; -fx-font-weight: bold;" text="Thời gian" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" style="-fx-font-family: Tahoma; -fx-font-size: 16; -fx-font-weight: bold;" text="Ghế trống" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <ComboBox fx:id="createMovie" prefWidth="200.0" GridPane.columnIndex="1" />
+                              <ComboBox fx:id="createRoom" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <ComboBox fx:id="createTime" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <ComboBox fx:id="createCondition" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextField fx:id="createRemainSeat" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <DatePicker fx:id="createDate" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                           </children>
+                        </GridPane>
+                        <Button fx:id="createBtn" layoutX="432.0" layoutY="429.0" mnemonicParsing="false" onMousePressed="#handleCreate" text="Lưu" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <Label layoutX="140.0" layoutY="29.0" text="Quản lý Lịch chiếu">
+         <font>
+            <Font name="Tahoma Bold" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

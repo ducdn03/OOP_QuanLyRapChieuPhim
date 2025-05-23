@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1080.0" style="-fx-background-color: #F0F2F5; -fx-border-style: solid; -fx-border-radius: 10px; -fx-border-color: #FFFFFF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.simple_project.manageMovieController">
+   <children>
+      <HBox alignment="CENTER_LEFT" layoutX="47.0" layoutY="64.0" maxHeight="100.0" maxWidth="1080.0" prefHeight="100.0" prefWidth="1080.0" spacing="40.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="64.0">
+         <children>
+            <TextField fx:id="searchLineEdit" prefHeight="0.0" prefWidth="720.0" />
+            <ComboBox fx:id="typeSearchCombobox" prefWidth="150.0" />
+            <FontAwesomeIcon fx:id="searchBtn" glyphName="SEARCH" onMousePressed="#handleSearch" size="30" />
+         </children>
+         <padding>
+            <Insets left="100.0" right="100.0" />
+         </padding>
+      </HBox>
+      <TabPane fx:id="movieTabPane" layoutX="140.0" layoutY="178.0" prefHeight="500.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab id="1" text="Danh sách phim">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="471.0" prefWidth="830.0">
+                     <children>
+                        <AnchorPane layoutY="-1.0" prefHeight="474.0" prefWidth="800.0">
+                           <children>
+                              <AnchorPane prefHeight="480.0" prefWidth="300.0">
+                                 <children>
+                                    <ImageView fx:id="listMoviePoster" fitHeight="400.0" fitWidth="300.0" layoutX="1.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="1.0" />
+                                    <Hyperlink fx:id="listMovieTrailerLink" layoutX="96.0" layoutY="434.0" text="See the trailer here" />
+                                 </children>
+                              </AnchorPane>
+                              <Button fx:id="listPreviousMovieBtn" layoutX="626.0" layoutY="23.0" mnemonicParsing="false" onMousePressed="#handleListPreviousMovie" text="trước" />
+                              <Button fx:id="listNextMovieBtn" layoutX="697.0" layoutY="23.0" mnemonicParsing="false" onMousePressed="#handleListNextMovie" text="sau" />
+                              <AnchorPane layoutX="319.0" layoutY="61.0" prefHeight="380.0" prefWidth="450.0">
+                                 <children>
+                                    <GridPane alignment="CENTER" layoutX="10.0" layoutY="7.0" prefHeight="300.0" prefWidth="430.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="203.99998779296874" minWidth="10.0" prefWidth="133.59994812011718" />
+                                          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="280.8000518798828" minWidth="10.0" prefWidth="280.8000518798828" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="25.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="25.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Quốc gia" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Năm sản xuất" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Thời lượng" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" text="Tên phim">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" text="Thể loại" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Mô tả" GridPane.rowIndex="5">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="listMovieName" alignment="CENTER" contentDisplay="CENTER" text="label" GridPane.columnIndex="1">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="listMovieGenre" alignment="CENTER" contentDisplay="CENTER" text="label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="listMovieOrigin" alignment="CENTER" contentDisplay="CENTER" text="label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="listMovieDate" alignment="CENTER" contentDisplay="CENTER" text="label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="listMovieDuration" alignment="CENTER" contentDisplay="CENTER" text="label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="listMovieDescrip" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="5" GridPane.vgrow="SOMETIMES">
+                                             <font>
+                                                <Font name="Tahoma Bold" size="12.0" />
+                                             </font>
+                                          </TextArea>
+                                       </children>
+                                    </GridPane>
+                                    <Button fx:id="listUpdateMovieBtn" layoutX="199.0" layoutY="321.0" mnemonicParsing="false" onMousePressed="#handleListUpdateMovie" text="Update" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab id="2" text="Sửa">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="324.0" prefWidth="502.0">
+                     <children>
+                        <GridPane alignment="CENTER" layoutX="126.0" layoutY="14.0" prefHeight="400.0" prefWidth="550.0">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="203.99998779296874" minWidth="10.0" prefWidth="133.59994812011718" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="280.8000518798828" minWidth="10.0" prefWidth="280.8000518798828" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Quốc gia" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Năm sản xuất" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Thời lượng" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Poster" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Trailer" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="Tên phim">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="repairMovieOrigin" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="repairMovieDate" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="repairMovieDuration" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="Thể loại" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="repairMovieName" GridPane.columnIndex="1" />
+                              <ComboBox fx:id="repairGenreCombobox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <children>
+                                    <TextField fx:id="repairPosterTextEdit" />
+                                    <Button fx:id="repairPosterBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMousePressed="#handleRepairPoster" text="Browse" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <children>
+                                    <TextField fx:id="repairTrailerTextEdit" />
+                                    <Button fx:id="repairTrailerBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMousePressed="#handleRepairTrailer" text="Browse" />
+                                 </children>
+                              </VBox>
+                              <TextArea fx:id="repairDescripTextArea" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="7" GridPane.vgrow="SOMETIMES">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="12.0" />
+                                 </font></TextArea>
+                              <Label text="Mô tả" GridPane.rowIndex="7">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <HBox alignment="CENTER" layoutX="274.0" layoutY="420.0" prefHeight="51.0" prefWidth="255.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="deleteMovieBtn" mnemonicParsing="false" onMousePressed="#deleteMovie" text="Xóa" />
+                              <Button fx:id="updateMovieBtn" mnemonicParsing="false" onMousePressed="#updateMovie" text="Lưu" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab id="3" text="Tạo">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="324.0" prefWidth="502.0">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="273.0" layoutY="312.0" prefHeight="51.0" prefWidth="255.0" spacing="20.0" />
+                        <GridPane alignment="CENTER" layoutX="125.0" layoutY="14.0" prefHeight="400.0" prefWidth="550.0">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="203.99998779296874" minWidth="10.0" prefWidth="133.59994812011718" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="280.8000518798828" minWidth="10.0" prefWidth="280.8000518798828" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Quốc gia" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Năm sản xuất" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Thời lượng" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Poster" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Trailer" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="Tên phim">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="createMovieOrigin" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="createMovieDate" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="createMovieDuration" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="Thể loại" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="createMovieName" GridPane.columnIndex="1" />
+                              <ComboBox fx:id="createGenreCombobox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <children>
+                                    <TextField fx:id="createPosterTextEdit" />
+                                    <Button fx:id="createPosterBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMousePressed="#handleCreatePoster" text="Browse" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <children>
+                                    <TextField fx:id="createTrailerTextEdit" />
+                                    <Button fx:id="createTrailerBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMousePressed="#handleCreateTrailer" text="Browse" />
+                                 </children>
+                              </VBox>
+                              <TextArea fx:id="createDescripTextArea" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="7" GridPane.vgrow="SOMETIMES">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="12.0" />
+                                 </font></TextArea>
+                              <Label text="Mô tả" GridPane.rowIndex="7">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <Button fx:id="createMovieBtn" layoutX="383.0" layoutY="426.0" mnemonicParsing="false" onMousePressed="#createMovie" text="Lưu" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <Label layoutX="140.0" layoutY="29.0" text="Quản lý phim">
+         <font>
+            <Font name="Tahoma Bold" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

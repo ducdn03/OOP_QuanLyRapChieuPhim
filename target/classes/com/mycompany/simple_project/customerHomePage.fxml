@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="1080.0" style="-fx-background-color: #F0F2F5; -fx-border-style: solid; -fx-border-radius: 10px; -fx-border-color: #FFFFFF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.simple_project.customerHomePageController">
+   <children>
+      <ImageView fx:id="posterImage" fitHeight="600.0" fitWidth="1080.0" pickOnBounds="true" />
+      <AnchorPane layoutY="599.0" prefHeight="130.0" prefWidth="1080.0" style="-fx-background-color: #000000;">
+         <children>
+            <HBox fx:id="listPosterLayout" alignment="CENTER" layoutX="569.0" prefHeight="130.0" prefWidth="500.0" spacing="10.0" AnchorPane.rightAnchor="0.0" />
+            <VBox layoutY="-70.0" prefHeight="130.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="70.0" prefWidth="500.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <children>
+                        <Label fx:id="movieName" style="-fx-font-family: Tahoma; -fx-font-weight: bold; -fx-font-size: 30;" text="Label" textFill="WHITE">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" maxHeight="60.0" maxWidth="500.0" prefHeight="60.0" prefWidth="500.0" spacing="30.0">
+                     <children>
+                        <Label fx:id="movieGenre" style="-fx-font-family: Tạhoma; -fx-font-size: 20; -fx-font-weight: bold;" text="Label" textFill="WHITE" wrapText="true" />
+                        <Label fx:id="movieDuration" style="-fx-font-family: Tạhoma; -fx-font-size: 20; -fx-font-weight: bold;" text="Label" textFill="WHITE" wrapText="true" />
+                        <Label fx:id="movieDate" style="-fx-font-family: Tạhoma; -fx-font-size: 20; -fx-font-weight: bold;" text="Label" textFill="WHITE" wrapText="true" />
+                        <Label fx:id="movieOrigin" style="-fx-font-family: Tạhoma; -fx-font-size: 20; -fx-font-weight: bold;" text="Label" textFill="WHITE" wrapText="true" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

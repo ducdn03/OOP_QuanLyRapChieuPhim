@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.simple_project.loginFormController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="262.0" layoutY="73.0" text="Sign Up!">
+               <font>
+                  <Font name="Tahoma Bold" size="18.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="signUpConfirmPassword" layoutX="190.0" layoutY="213.0" prefHeight="30.0" prefWidth="220.0" promptText="Confirm Password" />
+            <Button fx:id="signUpSubmitButton" layoutX="250.0" layoutY="267.0" mnemonicParsing="false" onAction="#signUpSubmitButtonPress" prefHeight="40.0" prefWidth="100.0" text="Submit" />
+            <Hyperlink fx:id="signInLink" layoutX="207.0" layoutY="327.0" onAction="#signInLinkPress" text="Already have an account ? Sign in" />
+            <TextField fx:id="signUpUsername" layoutX="190.0" layoutY="111.0" prefHeight="30.0" prefWidth="220.0" promptText="Username" />
+            <Label fx:id="signUpErrorMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="193.0" layoutY="252.0" text="Label" textFill="RED" visible="false">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="signUpPassword" layoutX="190.0" layoutY="161.0" prefHeight="30.0" prefWidth="220.0" promptText="Password" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
